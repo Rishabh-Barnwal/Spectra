@@ -22,7 +22,7 @@ async def load():
             await bot.load_extension(f'cogs.{filename[:-3]}')  # Loads the command files
 async def cmdhandler():  # Asynchronous function called command handler is defined 
     load_dotenv()
-    Bot_Token = os.getenv("DISCORD_TOKEN") #It is a common practice to store the bot token and api keys in an .env file for security purposes 
+    Bot_Token = os.getenv("DISCORD_TOKEN")
     await load()
     await bot.start(f"{Bot_Token}")  # Your actual bot token
 asyncio.run(cmdhandler())  # Starts the command handler bot asynchronously
