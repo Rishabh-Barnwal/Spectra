@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # Message's intents are initialized (defining what events the bot can respond to)
 intents = discord.Intents.all()  # Enables all intents
 intents.message_content = True  # Allows the bot to read the content of the message
-# Bot is initialized to the command (hybrid) (with prefixes [!] and [/])
+# Bot is initialized to the command with prefix [!]
 bot = commands.Bot(command_prefix='!', intents=intents)
 # Bot is initialized to command !sync (Required during development phase)
 @bot.command()  # Changed to @bot.command() to make it work only with `!sync`
