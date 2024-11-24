@@ -25,10 +25,6 @@ Usage![](Aspose.Words.a3fdf529-1759-4ccf-8e08-7d8b20ed8acb.010.png)
 - After selecting the command,
   - If the command has no extra required arguments, press enter
   - If the command requires arguments, select said argument and input the expected values
-- Example:
-
-  ![](Aspose.Words.a3fdf529-1759-4ccf-8e08-7d8b20ed8acb.012.jpeg)
-
 Requirements![](Aspose.Words.a3fdf529-1759-4ccf-8e08-7d8b20ed8acb.013.png)
 
 - Python version 3.8+
