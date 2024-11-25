@@ -16,7 +16,7 @@ async def sync(ctx: commands.Context):
     await ctx.send(f'Synced {len(x)} commands')
 # Loads all the created commands ending with extension .py
 async def load():
-    for filename in os.listdir('./cogs'):  # Checks for file with path /cogs
+    for filename in os.listdir('./Source-code/cogs'):  # Checks for file with path /cogs
         if filename.endswith('.py'):
             # index -3 for the last ".py" of file
             await bot.load_extension(f'cogs.{filename[:-3]}')  # Loads the command files
