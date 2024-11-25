@@ -13,7 +13,7 @@ class ping(commands.Cog):
 
     @app_commands.command(name = "ping", description = "Sends the time it takes your message to reach spectra!")
     async def  ping(self, interaction: discord.Interaction): #The parameters are basically context (or the command) and length of the password (Default is 12)
-        latency = ctx.bot.latency*1000
+        latency = interaction.client.latency*1000
         await interaction.response.send_message(f"Latency: {latency:.2f}")
 
 async def setup(bot):
