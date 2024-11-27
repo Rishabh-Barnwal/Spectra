@@ -15,7 +15,7 @@ class ping(commands.Cog): # Links the command file to the command handler
     @app_commands.command(name = "ping", description = "Sends the time it takes your message to reach spectra!") # The bot is initialized to command /calc
     async def  ping(self, interaction: discord.Interaction): #The parameters are basically the bot initialisation and the location of interaction with the bot
         latency = interaction.client.latency*1000 #The actual latency extractor
-        await interaction.response.send_message(f"Pong! Latency: {latency:.2f}ms") #Sends the message
+        await interaction.response.send_message(f"**Pong!** Latency: `{latency:.2f}ms`") #Sends the message
 
 async def setup(bot): #Marks the end of the command and adds it to a folder called _pycache_
     await bot.add_cog(ping(bot))
