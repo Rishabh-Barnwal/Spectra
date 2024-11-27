@@ -25,6 +25,7 @@ class Help(commands.Cog): #Links the command file to the command handler
 `/music`: Sends random music genre!!
 `/nasa`: Sends NASA's Picture of the Day!!
 `/password`: Generate random password!!
+`/ping`: Sends the time it takes your message to reach spectra!
 `/quote`: Sends a random quote!!
 `/rev`: Reverses a user given string!!
 `/r-img`: Sends random Reddit pictures from r/landscapes subreddit!!
