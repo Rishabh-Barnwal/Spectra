@@ -1,6 +1,8 @@
 # Modules we are going to require for the r-img command
 import praw  # Python Reddit API Wrapper
 import discord
+import os
+from dotenv import load_dotenv
 from discord.ext import commands
 from discord import app_commands
 import random
@@ -11,10 +13,13 @@ class Rimg(commands.Cog):  # Links the command file to the command handler
         self.bot = bot
 
         # Set up Reddit API credentials
+        load_dotenv()
+        client_id = os.getenv("REDDIT_KEY")
+        client_secret = os.getenv("REDDIT_SECRET")
         self.reddit = praw.Reddit(
-            client_id="YOUR_CLIENT_ID",  # Replace with your Reddit App Client ID
-            client_secret="YOUR_CLIENT_SECRET",  # Replace with your Reddit App Client Secret
-            user_agent="Spectra Bot (by u/YOUR_USERNAME)"  # Replace with your Reddit username
+            client_id=f"{client_id}",  # Replace with your Reddit App Client ID
+            client_secret=f"{client_secret}",  # Replace with your Reddit App Client Secret
+            user_agent="Spectra Bot (by u/Tiny_Volume4503)"  # Replace with your Reddit username
         )
 
     @commands.Cog.listener()  # Registers a listener for events (enables the cog to respond to Discord events)
