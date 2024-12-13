@@ -17,9 +17,9 @@ class Rimg(commands.Cog):  # Links the command file to the command handler
         client_id = os.getenv("REDDIT_KEY")
         client_secret = os.getenv("REDDIT_SECRET")
         self.reddit = praw.Reddit(
-            client_id=f"{client_id}",  # Replace with your Reddit App Client ID
-            client_secret=f"{client_secret}",  # Replace with your Reddit App Client Secret
-            user_agent="Spectra Bot (by u/Tiny_Volume4503)"  # Replace with your Reddit username
+            client_id=f"{client_id}", #Client id for Reddit API
+            client_secret=f"{client_secret}", #Client secret for Reddit API
+            user_agent="Spectra Bot (by u/Tiny_Volume4503)" #Optional part of replacing with Reddit Username
         )
 
     @commands.Cog.listener()  # Registers a listener for events (enables the cog to respond to Discord events)
@@ -53,7 +53,7 @@ class Rimg(commands.Cog):  # Links the command file to the command handler
             # Handle errors
             await interaction.response.send_message(
                 f"Failed to fetch posts from Reddit. Error: {str(e)}",
-                ephemeral=True
+                ephemeral=True #Shows in form of error / dismissable message
             )
             print(f"Error: {str(e)}")
 
