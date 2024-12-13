@@ -31,7 +31,7 @@ class Rimg(commands.Cog):  # Links the command file to the command handler
         try:
             # Fetch subreddit posts
             subreddit = self.reddit.subreddit("LandscapePhotography")
-            posts = list(subreddit.hot(limit=50))  # Fetch the top 50 hot posts
+            posts = list(subreddit.hot(limit=100))  # Fetch the top 100 hot posts
 
             # Choose a random post
             random_post = random.choice(posts)
