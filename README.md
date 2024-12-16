@@ -7,6 +7,7 @@ Getting Started w/Spectra![](Aspose.Words.a3fdf529-1759-4ccf-8e08-7d8b20ed8acb.0
 - discord.py: The core of this project. It is used to interact with the chatting platform [Discord](https://discord.com/)
 - asyncio: is a Python library that provides tools for writing concurrent code for non-blocking I/O operations.![](Aspose.Words.a3fdf529-1759-4ccf-8e08-7d8b20ed8acb.002.png)
 - requests: Used for API (Application Programming Interface). Puts forth https: ![](Aspose.Words.a3fdf529-1759-4ccf-8e08-7d8b20ed8acb.003.png)![](Aspose.Words.a3fdf529-1759-4ccf-8e08-7d8b20ed8acb.004.png)requests using Python.
+- praw: is used to interact with the reddit api for the `/r-img` command.
 
 **In-built Modules:**
 
