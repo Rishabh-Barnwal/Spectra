@@ -26,11 +26,16 @@ class Pass(commands.Cog): #Links the command file to the command handler
             title="Password",
             description= f"Length: `{max_characters}`",
             color=discord.Color.blue()
-        )
+            )
         Password = str(password)
         password_final = f"`{Password}`"
         embed.add_field(name='Password', value=password_final, inline=False)
-        await interaction.response.send_message(embed=embed) #Sends the password in embedded message
+            
+        try:
+            await interaction.user.send(embed = embed)
+            await interaction.response.send_message("Please check your DMs.")
+        except discord.Forbidden:
+            await interaction.response.send_message("I couldn't message you, please check if your DMs are unlocked.") #Sends the password in embedded message
 
 async def setup(bot): #Marks the end of the command and adds it to a folder called _pycache_
     await bot.add_cog(Pass(bot))
