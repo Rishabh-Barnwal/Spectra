@@ -1,6 +1,5 @@
-#The modules we are going to require for Random Chemical Formulae
+#The modules we are going to require for the "everything" command
 import discord
-import math
 import random
 from discord.ext import commands
 from discord import app_commands
