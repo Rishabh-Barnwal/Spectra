@@ -1,5 +1,5 @@
 # Modules we are going to require for the r-img command
-import praw  # Python Reddit API Wrapper
+import asyncpraw  # Python Reddit API Wrapper
 import discord
 import os
 from dotenv import load_dotenv
@@ -16,7 +16,7 @@ class Rimg(commands.Cog):  # Links the command file to the command handler
         load_dotenv()
         client_id = os.getenv("REDDIT_KEY")
         client_secret = os.getenv("REDDIT_SECRET")
-        self.reddit = praw.Reddit(
+        self.reddit = asyncpraw.Reddit(
             client_id=f"{client_id}", #Client id for Reddit API
             client_secret=f"{client_secret}", #Client secret for Reddit API
             user_agent="Spectra Bot (by u/Tiny_Volume4503)" #Optional part of replacing with Reddit Username
@@ -31,7 +31,7 @@ class Rimg(commands.Cog):  # Links the command file to the command handler
         try:
             # Fetch subreddit posts
             subreddit = self.reddit.subreddit("LandscapePhotography")
-            posts = list(subreddit.hot(limit=100))  # Fetch the top 100 hot posts
+            posts = [post async for post in subreddit.hot(limit=100)]  # Fetch top 100 hot posts asynchronously
 
             # Choose a random post
             random_post = random.choice(posts)
