@@ -30,8 +30,8 @@ class Rimg(commands.Cog):  # Links the command file to the command handler
     async def r_img(self, interaction: discord.Interaction):
         try:
             # Fetch subreddit posts
-            subreddit = self.reddit.subreddit("LandscapePhotography")
-            posts = [post async for post in subreddit.hot(limit=100)]  # Fetch top 100 hot posts asynchronously
+            subreddit = await self.reddit.subreddit("LandscapePhotography")
+            posts = [post async for post in subreddit(limit=100)]  # Fetch top 100 hot posts asynchronously
 
             # Choose a random post
             random_post = random.choice(posts)
