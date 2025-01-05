@@ -18,7 +18,7 @@ class Nasa(commands.Cog): #Links the command file to the command handler
     @app_commands.command(name = "nasa", description = "Sends NASA's Picture of the Day!") #The bot is initialised to command /nasa
     async def nasa(self, interaction: discord.Interaction): #The parameters are basically the bot initialisation and the location of interaction with the bot
         load_dotenv()
-        api_key = os.getenv("NASA_API_KEY") #API key for the pai used
+        api_key = os.getenv("NASA_API_KEY") #API key for the API used
         url = f"https://api.nasa.gov/planetary/apod?api_key={api_key}" #URL for the api with the personal api key
 
         # Fetch the APOD JSON response
@@ -33,9 +33,9 @@ class Nasa(commands.Cog): #Links the command file to the command handler
         explanation = content.get('explanation')
         title = content.get('title')
 
-        if(content.get('media_type') == "video"):
+        if content.get('media_type') == "video":
             vid = content.get('url')
-            watch = f"[Watch the video here]({vid})";
+            watch = f"[Watch the video here]({vid})"
             NASA_embed_vid = discord.Embed(
             title=f"{title}, {date}",
             description=f"{explanation}\n{watch}",
@@ -43,7 +43,7 @@ class Nasa(commands.Cog): #Links the command file to the command handler
             )
             await interaction.response.send_message(embed=NASA_embed_vid)
 
-        elif(content.get('media_type') == "image"):
+        elif content.get('media_type') == "image":
             watch = " ";
             apod_url = content.get('url')
             NASA_embed_img = discord.Embed(
