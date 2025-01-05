@@ -12,7 +12,7 @@ class ping(commands.Cog): # Links the command file to the command handler
         print('Ping loaded')
 
 
-    @app_commands.command(name = "ping", description = "Sends the time it takes your message to reach spectra!") # The bot is initialized to command /calc
+    @app_commands.command(name = "ping", description = "Sends the time it takes your message to reach spectra!") # The bot is initialized to command /ping
     async def  ping(self, interaction: discord.Interaction): #The parameters are basically the bot initialisation and the location of interaction with the bot
         latency = interaction.client.latency*1000 #The actual latency extractor
         await interaction.response.send_message(f"**Pong!** Latency: `{latency:.2f}ms`") #Sends the message
