@@ -33,7 +33,7 @@ class Pass(commands.Cog): #Links the command file to the command handler
             
         try:
             await interaction.user.send(embed = embed)
-            await interaction.response.send_message("Please check your DMs.")
+            await interaction.response.send_message("Password sent! Check your DMs!")
         except discord.Forbidden:
             await interaction.response.send_message("I couldn't message you, please check if your DMs are unlocked.") #Sends the password in embedded message
 
