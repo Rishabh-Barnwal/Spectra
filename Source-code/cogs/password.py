@@ -12,7 +12,7 @@ class Pass(commands.Cog): #Links the command file to the command handler
     async def on_ready(self): #This one is just for confirming that the command has been loaded (Prints it in terminal itself)
         print('Password loaded')
 
-    @app_commands.command(name = "password", description = "Generate random password") #The bot is initialised to command /password
+    @app_commands.command(name = "password", description = "Generate and DMs you a randomly generated password!!") #The bot is initialised to command /password
     async def password(self, interaction: discord.Interaction, max_characters: int = 12): #The parameters are basically the bot initialisation, the location of interaction with the bot and the length of password(Default value iis 12)
         uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         lowercase = 'abcdefghijklmnopqrstuvwxyz'

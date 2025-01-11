@@ -26,7 +26,7 @@ class Rimg(commands.Cog):  # Links the command file to the command handler
     async def on_ready(self):  # This one is just for confirming that the command has been loaded
         print('r-img loaded')
 
-    @app_commands.command(name="r-img", description="Sends random Reddit pictures from r/LandscapePhotography subreddit!")
+    @app_commands.command(name="r-img", description="Sends random Reddit pictures (Top 50) from r/LandscapePhotography subreddit!")
     async def r_img(self, interaction: discord.Interaction):
         try:
             # Fetch subreddit posts
